@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # 1. Parse options from Home Assistant's config file
+
 if [ -f /data/options.json ]; then
     GPS_DEV=$(grep -o '"gps_device": "[^"]*' /data/options.json | cut -d'"' -f4)
 else
-    GPS_DEV="/dev/ttyUSB0"
+    GPS_DEV=$(ls /dev/ttyUSB* /dev/ttyACM* | head -n 1)
+    if [ -z "$GPS_DEV" ]; then
+        echo "No GPS device found. Waiting..."
+    fi
 fi
 
 # 2. Export options as environment variables so the Python code can see them
