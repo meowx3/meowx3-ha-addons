@@ -1,6 +1,6 @@
 name: "GPS NTP Server"
 description: "High-precision Stratum 1 NTP server using GPS/PPS with UBLOX optimization and MQTT telemetry."
-version: "1.0.0"
+version: "1.0.1"
 slug: "gps-ntp-mqtt"
 arch:
   - aarch64
