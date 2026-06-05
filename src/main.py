@@ -94,10 +94,13 @@ def index():
 
 @app.route('/api/stats')
 def api_stats():
-    """Provides the JSON data for the Web Dashboard charts and Sky-View."""
     if not latest_snapshot:
         return jsonify({"error": "No GPS data available yet"}), 503
+    
+    # Inject the most recent client list directly into the response
+    latest_snapshot['clients'] = gps_mgr.get_ntp_clients() 
     return jsonify(latest_snapshot)
+
 
 @app.route('/health')
 def health():
