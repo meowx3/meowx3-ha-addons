@@ -1,0 +1,21 @@
+name: Build Addon
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u USERNAME --password-stdin
+
+      - name: Build
+        run: docker build -t ghcr.io/meowx3/gps-ntp-mqtt:latest ./addon
+
+      - name: Push
+        run: docker push ghcr.io/meowx3/gps-ntp-mqtt:latest
