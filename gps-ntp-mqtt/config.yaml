@@ -1,6 +1,6 @@
 name: "GPS NTP Server"
 description: "High-precision Stratum 1 NTP server using GPS/PPS with UBLOX optimization and MQTT telemetry."
-version: "1.0.2"
+version: "1.0.3"
 slug: "gps-ntp-mqtt"
 arch:
   - aarch64
@@ -13,7 +13,9 @@ arch:
 options:
   gps_device:
     description: "USB Device path (e.g., /dev/ttyUSB0 or /dev/ttyACM0)"
-    default: ""
+    default: null
+schema:
+  gps_device: str
 
 # Hardware access permissions
 devices:
