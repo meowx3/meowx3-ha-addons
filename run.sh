@@ -6,13 +6,9 @@ if [ -z "$GPS_DEV" ]; then
     echo "No GPS device found. Waiting..."
 fi
 
-# 2. UBLOX Optimization (via ubxtool)
-if [[ $GPS_DEV == *"USB"* ]]; then
-    echo "Optimizing UBLOX receiver..."
-    # Enable Galileo, GLONASS and maximize update rate (1Hz - 5Hz)
-    ubxtool -p CFG-NAV5 > /dev/null
-    ubxtool -s CFG-MSG-PPS=1 > /dev/null
-fi
+# Run optimization script
+chmod +x /app/scripts/ublox_optimize.sh
+/app/scripts/ublox_optimize.sh $GPS_DEV
 
 # 3. Start GPSD with PPS support
 # -n: don't wait for client, -n: read from device immediately
