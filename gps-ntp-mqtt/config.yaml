@@ -37,7 +37,7 @@ ports:
 
 # Security settings
 #privileged: true # Required to access GPS hardware and conntrack table for NTP clients
-priveleged:
+privileged:
   - SYS_RAWIO
   - NET_ADMIN
   - NET_RAW
