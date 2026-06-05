@@ -4,6 +4,10 @@ on:
     branches: [ main ]
   workflow_dispatch: # <--- Add this line!
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
