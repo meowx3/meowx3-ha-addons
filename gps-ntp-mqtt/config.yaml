@@ -11,15 +11,6 @@ arch:
 
 # These options appear in the HA Addon Configuration UI panel
 options:
-  mqtt_host:
-    description: "IP Address of your MQTT Broker"
-    default: "192.168.1.50"
-  mqtt_user:
-    description: "MQTT Username"
-    default: "homeassistant"
-  mqtt_password:
-    description: "MQTT Password"
-    default: "password"
   gps_device:
     description: "USB Device path (e.g., /dev/ttyUSB0 or /dev/ttyACM0)"
     default: "/dev/ttyUSB0"
