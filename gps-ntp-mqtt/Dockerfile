@@ -19,5 +19,5 @@ RUN mkdir -p /var/lib/chrony
 # Expose NTP and Web UI ports
 EXPOSE 123/udp 8080
 
-RUN chmod +x /app/run.sh
+RUN chmod a+x /app/run.sh
 CMD ["/app/run.sh"]
