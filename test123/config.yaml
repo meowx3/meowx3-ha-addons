@@ -1,19 +1,12 @@
-# https://developers.home-assistant.io/docs/apps/configuration#app-configuration
-name: "GPS Data Echo App"
+name: "test123"
 version: "1.0.0"
-slug: test123
-description: "Echoes GPS data from gpsd application to the shell using u-blox 7 receiver"
-url: "https://github.com/meowx3/ha-addons/tree/main/test123"
+description: "Echoes GPS data from gpsd to shell"
 arch:
   - aarch64
-  - amd64
-init: false
-map:
-  - share:rw
+  - armv7
+  - x86_64
 options:
-  gps_device: "/dev/ttyACM0"
-  baud_rate: 9600
-schema:
-  gps_device: "str?"
-  baud_rate: "int?"
-image: "ghcr.io/meowx3/test123"
+  device: "/dev/ttyUSB0"
+  baudrate: 9600
+devices:
+  - /dev/ttyUSB0
