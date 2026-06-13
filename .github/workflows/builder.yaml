@@ -65,7 +65,7 @@ jobs:
   build-app:
     name: Build ${{ matrix.app }}
     needs: init
-    #if: needs.init.outputs.changed == 'true'
+    if: needs.init.outputs.changed == 'true'
     permissions:
       contents: read
       id-token: write
