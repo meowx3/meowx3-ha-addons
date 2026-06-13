@@ -1,15 +1,12 @@
+---
 name: Release Drafter
+
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
-      - master # Or your main/default branch
-permissions:
-  contents: write # Needed to create/update releases
-  pull-requests: read # Needed to fetch merged PRs
+      - main
+
 jobs:
-  update_release_draft:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: release-drafter/release-drafter@v7 # Uses the latest major action version
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_PASS }}
+  workflows:
+    uses: hassio-addons/workflows/.github/workflows/release-drafter.yaml@main
