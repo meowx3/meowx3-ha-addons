@@ -10,4 +10,3 @@ on:
 jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/release-drafter.yaml@main
-    
