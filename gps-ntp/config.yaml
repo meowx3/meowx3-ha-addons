@@ -1,7 +1,7 @@
 ---
 name: GPS-NTP
 description: "My other newest broken change?!"
-version: 1.0.0
+version: 1.0.1
 slug: gps-ntp
 url: https://github.com/meowx3/ha-addons/gps-ntp
 init: false
