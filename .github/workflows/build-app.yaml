@@ -107,7 +107,7 @@ jobs:
         uses: home-assistant/builder/actions/publish-multi-arch-manifest@2026.03.2
         with:
           architectures: ${{ needs.prepare.outputs.architectures }}
-          container-registry-password: ${{ secrets.GITHUB_TOKEN }}
+          container-registry-password: ${{ secrets.ACTIONS_PASS }}
           image-name: ${{ needs.prepare.outputs.image_name }}
           image-tags: |
             ${{ needs.prepare.outputs.version }}
