@@ -3,7 +3,6 @@ name: "gps-ntp"
 description: "My other newest broken change?!"
 version: dev
 slug: "gps-ntp"
-description: Example app by Home Assistant Community Apps
 url: https://github.com/meowx3/ha-addons/gps-ntp
 init: false
 arch:
